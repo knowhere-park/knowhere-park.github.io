@@ -1,8 +1,6 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+<html class="no-js">
     <head>
         <meta charset="utf-8">
         
@@ -16,9 +14,8 @@
         <link rel="stylesheet" href="css/animations.css">
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
-        <!--[if lt IE 9]>
-            <script src="js/vendor/respond.min.js"></script>
-        <![endif]-->
+        <script src="lib/angular.min.js"></script>
+    	<script src="js/app.js"></script>
     </head>
     <body class="frontpage"><div id="top"></div>
         <!--[if lt IE 7]>
@@ -343,26 +340,30 @@
                 </div>
             </div>
             <div class="row">
-                <div class="block col-sm-6 col-sm-push-3 to_animate" data-animation="slideExpandUp">
+                <div class="block col-sm-6 col-sm-push-3 to_animate" data-animation="slideExpandUp" ng-app="myApp" ng-controller="MyController">
                     <form class="contact-form" method="post" action="http://ethereal.modernwebtemplates.com/">
                         <p class="contact-form-name">
                             <label for="name">Nombre <span class="required">*</span></label>
-                            <input type="text" aria-required="true" size="30" value="" name="name" id="name" class="form-control" placeholder="Nombre">
+                            <input type="text" aria-required="true" size="30" value="" name="name" id="name" class="form-control" placeholder="Nombre" ng-model="name">
+                        </p>
+						<p class="contact-form-name">
+                            <label for="name">Usuario <span class="required">*</span></label>
+                            <input type="text" aria-required="true" size="30" value="" name="name" id="name" class="form-control" placeholder="Nombre" ng-model="user">
                         </p>
                         <p class="contact-form-email">
                             <label for="email">Email <span class="required">*</span></label>
-                            <input type="email" aria-required="true" size="30" value="" name="email" id="email" class="form-control" placeholder="Email">
+                            <input type="email" aria-required="true" size="30" value="" name="email" id="email" class="form-control" placeholder="Email" ng-model="email">
                         </p>
-                        <p class="contact-form-subject">
-                            <label for="subject">Asunto <span class="required">*</span></label>
-                            <input type="text" aria-required="true" size="30" value="" name="subject" id="subject" class="form-control" placeholder="Asunto">
+                        <p class="contact-form-name">
+                            <label for="name">Password <span class="required">*</span></label>
+                            <input type="text" aria-required="true" size="30" value="" name="name" id="name" class="form-control" placeholder="Nombre" ng-model="password1">
                         </p>
-                        <p class="contact-form-message">
-                            <label for="message">Mensaje</label>
-                            <textarea aria-required="true" rows="8" cols="45" name="message" id="message" class="form-control" placeholder="Mensaje"></textarea>
+						<p class="contact-form-name">
+                            <label for="name">Confirma tu password <span class="required">*</span></label>
+                            <input type="text" aria-required="true" size="30" value="" name="name" id="name" class="form-control" placeholder="Nombre" ng-model="password2">
                         </p>
                         <p class="contact-form-submit vertical-margin-40 text-center">
-                            <input type="submit" value="Enviar" id="contact_form_submit" name="contact_submit" class="theme_btn">
+                            <input type="submit" value="Enviar" id="contact_form_submit" name="contact_submit" class="theme_btn" ng-click="hello();">
                         </p>
                     </form>
                 </div>
