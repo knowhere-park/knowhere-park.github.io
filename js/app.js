@@ -37,7 +37,9 @@ app.controller('MyController', function ($scope, $http){
                         password1: $scope.password1,
                         password2: $scope.password2,
                         email:$scope.email,
-                        firstname:$scope.name
+                        first_name:$scope.name,
+                        last_name:$scope.lastname,
+                        mobile_phone:$scope.phone
                 }; 
                 
                 var config = {
@@ -48,9 +50,9 @@ app.controller('MyController', function ($scope, $http){
                 };
                 $http.post("http://192.241.211.179:8000/rest-auth/registration/" , dataToPost, config)
                         .success(function(serverResponse, status, headers, config) {
-                           alert("Se agrego correctamente");
+                           $scope.Success = "Gracias por registrarte, te enviaremos más información a tu correo.";
                         }).error(function(serverResponse, status, headers, config) {
-                            alert("failure");
+                            $scope.Error = "Error al agregar Ususario";
                         }
                     );
                 

@@ -81,32 +81,7 @@
                     -->
                 </li>
                 
-                <div class="col-md-4 col-md-offset-7" style="background:#2e0557; height:400px;  z-index:99; margin-top:10%; opacity:0.9; -webkit-border-radius: 5px 5px; -moz-border-radius: 5px 5px; padding:15px 25px 15px 25px">
-                <h1>entra con tu cuenta</h1>
-                  <div class="input-group"  style=" margin-bottom:10px;">
-                  <span class="input-group-addon" id="basic-addon1">@</span>
-                  <input type="text" class="form-control" placeholder="Usuario" aria-describedby="basic-addon1">
-                  </div>
-                 
-               
-                  <div class="input-group">
-                  <span class="input-group-addon" id="basic-addon1">►</span>
-                  <input type="text" class="form-control" placeholder="Contraseña" aria-describedby="basic-addon1">
-                  </div>
-                  </br>
-                <button type="button" class="btn btn-default btn-lg login login2">
-   iniciar sesion
-</button>
-          <div class="aqui">Si aun no tienes cuenta <strong> <a href="url">Registrate aqui </a></strong></div>         
-                <h1>Buscar</h1>
                 
-                   <div class="input-group">
-      <input type="text" class="form-control" placeholder="Buscar el estacionamiento mas cercano">
-      <span class="input-group-btn">
-        <button class="btn btn-default login" type="button">Buscar</button>
-      </span>
-    </div><!-- /input-group -->
-  </div><!-- /.col-lg-6 -->
 </div><!-- /.row -->
                 
                 </div>
@@ -324,13 +299,13 @@
     
 
 
-    <footer id="footer" class="grey_section parallax bg-color2">
+    <footer id="footer" class="grey_section  bg-color2">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 text-center">
-                    <p class="pre-block-header">Tienes alguna duda</p>
-                    <h2 class="block-header text-center to_animate" data-animation="slideUp">Contactanos</h2>
-                    <p>Aristoteles 221, Polanco, Mexico DF</p>
+                    <p class="pre-block-header">Quieres saber mas de nosotros</p>
+                    <h2 class="block-header text-center " data-animation="slideUp">Registrate</h2>
+                    <p>Te enviaremos a tu email más información</p>
                     <p id="social">
                         <a class="socialico-facebook" href="#" title="Facebook">#</a>
                         <a class="socialico-twitter" href="#" title="Twitter">#</a>
@@ -339,31 +314,38 @@
                     </p>
                 </div>
             </div>
-            <div class="row">
-                <div class="block col-sm-6 col-sm-push-3 to_animate" data-animation="slideExpandUp" ng-app="myApp" ng-controller="MyController">
-                    <form class="contact-form" method="post" action="http://ethereal.modernwebtemplates.com/">
-                        <p class="contact-form-name">
-                            <label for="name">Nombre <span class="required">*</span></label>
-                            <input type="text" aria-required="true" size="30" value="" name="name" id="name" class="form-control" placeholder="Nombre" ng-model="name">
+            <div >
+                <div class="block col-sm-6 col-sm-push-3 "  ng-app="myApp" ng-controller="MyController">
+                    <p style="color:Green;">{{Success}}</p>
+					<p style="color:Red;">{{Error}}</p>
+					<form id="formRegistro">
+					   <p>                           
+                            <input type="text"  size="30"  name="name" id="name" class="form-control" placeholder="Nombre" ng-model="name" required>
+                       </p>
+					   <p>                           
+                            <input type="text"  size="30"  name="lastname" id="lastname" class="form-control" placeholder="Apellidos" ng-model="lastname" required>
+                       </p>
+					   <p>                           
+                            <input type="text"  size="30"  name="phone" id="phone" class="form-control" placeholder="Teléfono o Celular" ng-model="phone" required>
+                       </p>
+						<p>
+                            
+                            <input type="text" size="30" value="" name="name" id="name" class="form-control" placeholder="Nombre de Usuario" ng-model="user" required>
                         </p>
-						<p class="contact-form-name">
-                            <label for="name">Usuario <span class="required">*</span></label>
-                            <input type="text" aria-required="true" size="30" value="" name="name" id="name" class="form-control" placeholder="Nombre" ng-model="user">
+                        <p>
+                            
+                            <input type="email" size="30" value="" name="email" id="email" class="form-control" placeholder="Email" ng-model="email" required>
                         </p>
-                        <p class="contact-form-email">
-                            <label for="email">Email <span class="required">*</span></label>
-                            <input type="email" aria-required="true" size="30" value="" name="email" id="email" class="form-control" placeholder="Email" ng-model="email">
+                        <p>
+                            
+                            <input type="password"  size="30" value="" name="name" id="name" class="form-control" placeholder="Contraseña" ng-model="password1" required>
                         </p>
-                        <p class="contact-form-name">
-                            <label for="name">Password <span class="required">*</span></label>
-                            <input type="text" aria-required="true" size="30" value="" name="name" id="name" class="form-control" placeholder="Nombre" ng-model="password1">
-                        </p>
-						<p class="contact-form-name">
-                            <label for="name">Confirma tu password <span class="required">*</span></label>
-                            <input type="text" aria-required="true" size="30" value="" name="name" id="name" class="form-control" placeholder="Nombre" ng-model="password2">
+						<p>
+                            
+                            <input type="password" size="30" value="" name="name" id="name" class="form-control" placeholder="Repite tu Contraseña" ng-model="password2" required>
                         </p>
                         <p class="contact-form-submit vertical-margin-40 text-center">
-                            <input type="submit" value="Enviar" id="contact_form_submit" name="contact_submit" class="theme_btn" ng-click="hello();">
+                            <input type="submit" value="Enviar" id="contact_form_submit" name="contact_submit" class="theme_btn" ng-click="hello();"		>
                         </p>
                     </form>
                 </div>
@@ -389,14 +371,11 @@
     </section>
  
 
-    <div class="preloader">
-        <div class="preloaderimg"></div>
-    </div>
+    
 
         <script src="js/vendor/jquery-1.11.1.min.js"></script>
         <script src="js/vendor/jquery-migrate-1.2.1.min.js"></script>
         <script src="js/vendor/bootstrap.min.js"></script>
-        <script src="js/vendor/placeholdem.min.js"></script>
         <script src="js/vendor/hoverIntent.js"></script>
         <script src="js/vendor/superfish.js"></script>
         <script src="js/vendor/jquery.actual.min.js"></script>
