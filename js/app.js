@@ -5,14 +5,14 @@ app.config(function($httpProvider) {
                 $httpProvider.defaults.xsrfCookieName = 'csrftoken';
                 $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
             });
-app.controller('MyController', function ($scope, $http){
-
+app.controller('MyController', function ($scope, $http, $log){
+		$scope.data = {};
+		
     
-        $scope.hello = function(){
-                console.log("OPTIONS");
-            
-                
-                //-------------GET--------------    
+        $scope.SaveAndNext = function(){
+                if($scope.formRegistro.$valid){
+					$log.info('Form is valid');
+					//-------------GET--------------    
 
 
                 $http({method: 'GET', url: 'http://192.241.211.179:8000/users/', headers:  {
@@ -64,6 +64,13 @@ app.controller('MyController', function ($scope, $http){
                 
             
             //------------------------------
+				} else {
+					$log.error('Form is not valid');
+					$scope.Error = "No se pudo registrar, verifique su información";
+					$scope.Success = "";
+				}
+                
+                
             };
            //--------------------------
 });

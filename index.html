@@ -211,7 +211,7 @@ aplicación móvil. </p>
             </div>
             <div class="row" ng-app="myApp" ng-controller="MyController">
 					
-				<form id="formRegistro">
+				<form name="formRegistro"  ng-submit="SaveAndNext()" >
 					<div class="block col-sm-6 col-sm-push-3 to_animate registrate" data-animation="slideExpandUp">
 					<h1 id="reds">Registro</h1>
                    
@@ -244,7 +244,7 @@ aplicación móvil. </p>
 					  <span  id="basic-addon1"><input type="checkbox" ng-model="needs" ng-init='checkStatus=false'> Quiero rentar mi estacionamiento</span>
 					  
 					  </div>
-					  <input type="submit" value="Registrarse" id="contact_form_submit" name="contact_submit"  ng-click="hello();"	class="btn btn-default btn-lg login login2"	>
+					  <input type="submit" value="Registrarse" id="contact_form_submit" name="contact_submit"   class="btn btn-default btn-lg login login2"	>
 					  <p style="color:Green;">{{Success}}</p>
 					<p style="color:Red;">{{Error}}</p>
 					
@@ -304,10 +304,19 @@ aplicación móvil. </p>
         <script src='js/vendor/jquery.funnyText.min.js'></script>
         <script src='js/vendor/jquery.countTo.js'></script>
         <script src="js/vendor/grid.js"></script>
-        <script src='twitter/jquery.tweet.min.js'></script>
+       
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
+		  ga('create', 'UA-70511607-1', 'auto');
+		  ga('send', 'pageview');
+
+		</script>
 
     </body>
 </html>
