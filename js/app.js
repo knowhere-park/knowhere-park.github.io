@@ -33,35 +33,34 @@ app.controller('MyController', function ($scope, $http, $log){
                         if($scope.needs==undefined){
                             $scope.needs=false;                            
                         }
-                 var dataToPost = {
-                        
-                        first_name:$scope.name,
-                        last_name:$scope.lastname,
-                        email:$scope.email,
-                        mobile_phone:$scope.phone,                        
-                        offers_parking: $scope.offers,
-                        needs_parking: $scope.needs
-                }; 
-                
-                var config = {
-                    headers:  {
-                        'Content-Type': 'application/json',
-                        
-                    }
-                };
-                
-                
-                 
-                $http.post("http://192.241.211.179:8000/users/" , dataToPost, config)
-                        .success(function(serverResponse, status, headers, config) {
-                           $scope.Success = "Gracias por registrarte, te enviaremos más información a tu correo.";
-						   $scope.Error = "";
-                        }).error(function(serverResponse, status, headers, config) {
-                            $scope.Success = "";
-						   $scope.Error = "No se pudo registrar, verifique su información";
-                        }
-                    );
-                
+		$http({
+		    method: 'POST',
+		    url: "https://knowhere.wufoo.com/api/v3/forms/z1wwzorb14vei3s/entries.json",
+		    headers: {
+		    	'Content-Type': 'application/x-www-form-urlencoded',
+			'Authorization': 'Basic MjlFMS1OSDFBLVA0TUotTk1RQzpiOGVuJFImNVRuYkE2am1t'
+		    },
+		    transformRequest: function(obj) {
+			var str = [];
+			for(var p in obj)
+			str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+			return str.join("&");
+		    },
+		    data: {
+	  	    	Field1: $scope.name,
+			Field2: $scope.lastname,
+			Field3: $scope.phone,
+			Field4: $scope.email,
+			Field6: $scope.offers,
+			Field7: $scope.needs
+		    }
+		}).success(function (serverResponse, status, headers, config) {
+                	$scope.Success = "Gracias por registrarte, te enviaremos más información a tu correo.";
+			$scope.Error = "";
+                }).error(function(serverResponse, status, headers, config) {
+                	$scope.Success = "";
+			$scope.Error = "No se pudo registrar, verifique su información";
+                });			                          
             
             //------------------------------
 				} else {
